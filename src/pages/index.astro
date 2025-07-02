@@ -1,0 +1,76 @@
+---
+// import Welcome from '../components/Welcome.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+
+---
+
+<Layout title="Portfolio de Diego -</Layout> Analista de datos y experto en automatización tareas"
+description="Contrata a Diego para que te ayude automatizar tareas.">
+  <main class="px-4">
+    <SectionContainer class = "py-44 pb-32">
+      <img
+        class="rounded-full w-20 h-20 mb-5"
+        src="/src/assets/diegopefer-photo.png"
+        alt="diegopefer photo"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hola, soy Diego <a
+          href="https://www.linkedin.com/in/diegopenaferreira"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-3xl text-wrap max-w-[700px]">
+        <span>+3 años experiencia. </span><span class="text-yellow-200/90"
+          >Experto automatizacion tareas y analisis de datos.
+        </span><span class="text-red-200/90"> De A Coruña, España. </span><span
+          class="opacity-75">Especializado en crear soluciones unicas.</span
+        >
+      </h2>
+		<nav class="flex gap-4 mt-8 flex-wrap">
+			<SocialPill href="https://www.linkedin.com/in/diegopenaferreira/">
+				<LinkedInIcon class="size-4 md:size-6"/>
+				LinkedIn
+			</SocialPill>
+			<SocialPill href="https://github.com/diegopefer">
+				<GithubIcon class="size-4 md:size-6"/>
+				GitHub
+			</SocialPill>
+			<SocialPill href="mailto:diegopenfer@gmail.com">
+				<MailIcon class="size-4 md:size-6"/>
+				diegopenfer@gmail.com
+			</SocialPill>
+		</nav>
+    </SectionContainer>
+    
+    <!-- Experiencia laboral -->
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <!-- proyectos -->
+    <SectionContainer id="proyectos">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <CodeIcon class="size-7" />
+      Proyectos
+    </h2>
+    <Projects />
+  </SectionContainer>
+  </main>
+</Layout>

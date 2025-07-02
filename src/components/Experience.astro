@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Creador contenido",
+        description: "divulgo sobre programacion y desarrollo web en diferentes plataformas.Galardonado ocmo mejor creador contenido habla hispana en 2022 y mejor comunidad 2023 por GitHub" //(en cada experiencia añadir logros)
+    },
+    {
+        date: "Septiembre 2022",
+        title: "Principal Frontend Engineer",
+        description: "Responsable de la plataforma, componenetes y utilidees para la creación de apps web. Mejora 30% en la entrega de softawar. Implantacion de medidas de integramacion continua y despligue ab testing en mas de 15 equipos"
+    },
+    {
+        date: "Marzo 2023",
+        title: "Marketing",
+        description: "desarrollo apps"
+    }
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3"> 
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience}/>
+            </li>
+        ))
+    }       
+</ol>
+
