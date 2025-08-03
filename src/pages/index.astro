@@ -7,36 +7,86 @@ import GithubIcon from "@/components/icons/GitHub.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import BriefcaseIcon from "@/components/icons/Briefcase.astro";
 import CodeIcon from "@/components/icons/Code.astro";
+import ProfileIcon from "@/components/icons/Profile.astro";
+import SkillsIcon from "@/components/icons/Skills.astro";
 import Experience from "@/components/Experience.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Projects from "@/components/Projects.astro";
 import Hero from "@/components/Hero.astro";
-
+import AboutMe from "@/componentsAboutMe.astro";
+import Technologies from "@/components/Technologies.astro";
+import Contact from "@/components/Contact.astro"
 ---
 
-<Layout title="Porfolio de Diego - Analista automatización de procesos | Desarrollo web"
-description="Contrata a Diego para que te ayude automatizar tareas.">
+<Layout
+  title="Porfolio de Diego - Analista automatización de procesos | Desarrollo web"
+  description="Contrata a Diego para que te ayude automatizar tareas."
+>
   <main class="px-4">
-    <SectionContainer class = "py-20 md:pb-32">
+    <SectionContainer class="py-20 md:pb-32">
       <Hero />
     </SectionContainer>
-    
+
     <!-- Experiencia laboral -->
     <SectionContainer id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <BriefcaseIcon class="size-7" />
-        Experiencia laboral
+      <h2 class="text-3xl font-semibold text-black/80 dark:text-white mb-6 flex gap-x-3 items-baseline undefined">
+        <BriefcaseIcon class="size-7 align-middle relative top-[2px]" />
+        <span class="flex items-baseline">
+          <span>Experiencia Laboral</span>
+          <span class="text-[#8b63f7] text-5xl leading-none ml-1">.</span>
+        </span>
       </h2>
       <Experience />
     </SectionContainer>
 
     <!-- proyectos -->
-    <SectionContainer id="proyectos">
-    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-      <CodeIcon class="size-7" />
-      Proyectos
-    </h2>
-    <Projects />
-  </SectionContainer>
+    <SectionContainer id="proyectos" class="mb-10">
+      <h2 class="text-3xl font-semibold text-black/80 dark:text-white mb-6 flex gap-x-3 items-baseline undefined">
+        <CodeIcon class="size-7 align-middle relative top-[2px]" />
+        <span class="flex items-baseline">
+          <span>Proyectos</span>
+          <span class="text-[#8b63f7] text-5xl leading-none ml-1">.</span>
+        </span>
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <!-- sobre mi -->
+    <SectionContainer id="sobre-mi" class="mb-10">
+      <h2 class="text-3xl font-semibold text-black/80 dark:text-white mb-6 flex gap-x-3 items-baseline undefined">
+        <ProfileIcon class="size-7 align-middle relative top-[2px]" />
+        <span class="flex items-baseline">
+          <span>Sobre mi</span>
+          <span class="text-[#8b63f7] text-5xl leading-none ml-1">.</span>
+        </span>
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+
+    <!-- tecnologias -->
+    <SectionContainer id="#" class="mb-10">
+      <h2 class="text-3xl font-semibold text-black/80 dark:text-white mb-6 flex gap-x-3 items-baseline undefined">
+        <SkillsIcon class="size-7 align-middle relative top-[2px]" />
+        <span class="flex items-baseline">
+          <span>Tecnologías</span>
+          <span class="text-[#8b63f7] text-5xl leading-none ml-1">.</span>
+        </span>
+      </h2>
+      <Technologies />
+    </SectionContainer>
+
+     <!-- contacto -->
+    <SectionContainer id="contacto" class="mb-10">
+      <h2 class="text-3xl font-semibold text-black/80 dark:text-white mb-6 flex gap-x-3 items-baseline undefined">
+        <MailIcon class="size-7 align-middle relative top-[2px]" />
+        <span class="flex items-baseline">
+          <span>Contacto</span>
+          <span class="text-[#8b63f7] text-5xl leading-none ml-1">.</span>
+        </span>
+      </h2>
+      <Contact />
+    </SectionContainer>
+
+  
   </main>
 </Layout>

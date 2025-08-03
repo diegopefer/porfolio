@@ -1,0 +1,204 @@
+---
+import type tailwindcss from "@tailwindcss/vite";
+import WordPressIcon from "@/components/icons/WordPress.astro";
+import ElementorIcon from "@/components/icons/Elementor.astro";
+import CakePHPIcon from "@/components/icons/CakePHP.astro";
+import BootstrapIcon from "@/components/icons/Bootstrap.astro";
+import JavaScriptIcon from "@/components/icons/JavaScript.astro";
+import HtmlIcon from "@/components/icons/HTML.astro";
+import CssIcon from "@/components/icons/CSS.astro";
+import PythonIcon from "@/components/icons/Python.astro";
+import GroovyIcon from "@/components/icons/Groovy.astro";
+import PHPIcon from "@/components/icons/PHP.astro";
+import DB2Icon from "@/components/icons/DB2.astro";
+import MoodleIcon from "@/components/icons/Moodle.astro";
+import MongoDBIcon from "@/components/icons/MongoDB.astro";
+import TailwindCSSIcon from "@/components/icons/TailwindCSS.astro";
+import AstroIcon from "@/components/icons/Astro.astro";
+import TypeScriptIcon from "@/components/icons/TypeScript.astro";
+import VSCodeIcon from "@/components/icons/VSCode.astro";
+import GitIcon from "@/components/icons/Git.astro";
+import GitHubIcon from "@/components/icons/GitHub2.astro";
+import PostmanIcon from "@/components/icons/Postman.astro";
+import Link from "@/components/icons/Link.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import GitHub from "@/components/icons/GitHub.astro";
+
+const FRONTEND = [
+  {
+    name: "HTML",
+    class: "",
+    icon: HtmlIcon,
+  },
+  {
+    name: "CSS",
+    class: "",
+    icon: CssIcon,
+  },
+  {
+    name: "Bootstrap",
+    class: "",
+    icon: BootstrapIcon,
+  },
+  {
+    name: "JavaScript",
+    class: "",
+    icon: JavaScriptIcon,
+  },
+];
+
+const BACKEND = [
+  {
+    name: "Python",
+    class: "",
+    icon: PythonIcon,
+  },
+  {
+    name: "Groovy",
+    icon: GroovyIcon,
+  },
+  {
+    name: "DB2",
+    icon: DB2Icon,
+  },
+  {
+    name: "MongoDB",
+    icon: MongoDBIcon,
+  },
+  {
+    name: "PHP",
+    icon: PHPIcon,
+  },
+  {
+    name: "CakePHP",
+    icon: CakePHPIcon,
+  },
+];
+
+const LEARNING = [
+  {
+    name: "Tailwind CSS",
+    class: "",
+    icon: TailwindCSSIcon,
+  },
+  {
+    name: "Astro",
+    icon: AstroIcon,
+  },
+  {
+    name: "TypeScript",
+    icon: TypeScriptIcon,
+  },
+  
+];
+
+const TOOLS = [
+  {
+    name: "VS Code",
+    class: "",
+    icon: VSCodeIcon,
+  },
+  {
+    name: "Git",
+    icon: GitIcon,
+  },
+  {
+    name: "GitHub",
+    icon: GitHubIcon,
+  },
+  {
+    name: "WordPress",
+    icon: WordPressIcon,
+  },
+  {
+    name: "Postman",
+    icon: PostmanIcon,
+  },
+  {
+    name: "Moodle",
+    icon: MoodleIcon,
+  },
+  
+  
+  
+  
+];
+---
+
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-center text-[#8b63f7]">
+      Frontend
+    </h3>
+    <ul class="grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+      {
+        FRONTEND.map((tech) => {
+          const Icon = tech.icon;
+          return (
+            <li class="rounded-2xl group flex flex-col justify-center items-center">
+              <Icon class="size-12 mb-2" />
+              <span class="text-dark dark:text-white text-sm w-full text-center">{tech.name}</span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-center text-[#8b63f7]">
+      Backend
+    </h3>
+    <ul class="grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+      {
+        BACKEND.map((tech) => {
+          const Icon = tech.icon;
+          return (
+            <li class="rounded-2xl group flex flex-col justify-center items-center">
+              <Icon class="size-12 mb-2" />
+              <span class="text-sm w-full text-center">{tech.name}</span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-center text-[#8b63f7]">
+      Aprendiendo
+    </h3>
+    <ul class="grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+      {
+        LEARNING.map((tech) => {
+          const Icon = tech.icon;
+          return (
+            <li class="rounded-2xl group flex flex-col justify-center items-center">
+              <Icon class="size-12 mb-2" />
+              <span class="text-sm w-full text-center">{tech.name}</span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-center text-[#8b63f7]">
+      Herramientas
+    </h3>
+    <ul class="grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+      {
+        TOOLS.map((tech) => {
+          const Icon = tech.icon;
+          return (
+            <li class="rounded-2xl group flex flex-col justify-center items-center">
+              <Icon class="size-12 mb-2" />
+              <span class="text-sm w-full text-center">{tech.name}</span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+
+

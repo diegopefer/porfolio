@@ -31,7 +31,6 @@ const { description, title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <ViewTransitions />
-   
   </head>
   <body class="relative text-black dark:text-white overflow-x-hidden">
     <div
@@ -43,6 +42,7 @@ const { description, title } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    
     <style is:global>
       :root {
         color-scheme: light dark;

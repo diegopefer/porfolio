@@ -7,37 +7,46 @@ import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
 ---
 
-<div class="max-w-4xl">
-  <div class="flex gap-4 md:mt-16 mb-4">
-    <img
-      class="rounded-full shadow-lg size-25"
-      src="/src/assets/diegopefer-photo.png"
-      alt={personalImgAlt}
-    />
-    <Badge>Disponible para trabajar</Badge>
+<div class="flex gap-8 items-start">
+  <!-- Barra violeta -->
+  <div class="flex flex-col justify-center items-center mt-5">
+    <div class="size-3 rounded-full bg-[#8b63f7]"></div>
+    <div class="w-0.5 sm:h-80 h-40 bg-gradient-to-b from-[#8b63f7] to-transparent"></div>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl lg:text-7xl dark:text-white"
-  >
-    Hola, soy <span class="text-purple-600" style="opacity: 1; transform: none;"
-      >Diego Pena</span
+  <div class="max-w-4xl">
+  
+    <div class="flex gap-4 mt-4 md:mt-8 mb-4">
+      <img
+        class="rounded-full shadow-lg size-25"
+        src="/src/assets/diegopefer-photo.png"
+        alt={personalImgAlt}
+      />
+      <Badge>Disponible para trabajar</Badge>
+    </div>
+    <h1
+      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl lg:text-7xl dark:text-white"
     >
-  </h1>
-  <h2 class="mt-6 text-xl lg:text-3xl sm:text-2xl text-wrap">
-    Analista automatización de procesos | Desarrollador web
-  </h2>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="https://www.linkedin.com/in/diegopenaferreira/">
-      <LinkedInIcon class="size-5 md:size-6" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="https://github.com/diegopefer">
-      <GithubIcon class="size-5 md:size-6" />
-      GitHub
-    </SocialPill>
-    <SocialPill href="mailto:diegopenfer@gmail.com">
-      <MailIcon class="size-5 md:size-6" />
-      Contáctame
-    </SocialPill>
-  </nav>
+      Hola, soy <span class="text-[#8b63f7]" style="opacity: 1; transform: none;"
+        >Diego Pena</span
+      >
+    </h1>
+    <h2 class="mt-6 text-md lg:text-3xl md:text-2xl text-wrap">
+      Analista automatización de procesos | Desarrollador web
+    </h2>
+    <nav class="flex flex-wrap gap-4 mt-8">
+      <SocialPill href="https://www.linkedin.com/in/diegopenaferreira/">
+        <LinkedInIcon class="size-5 md:size-6" />
+        LinkedIn
+      </SocialPill>
+      <SocialPill href="https://github.com/diegopefer">
+        <GithubIcon class="size-5 md:size-6" />
+        GitHub
+      </SocialPill>
+      <SocialPill href="mailto:diegopenfer@gmail.com">
+        <MailIcon class="size-5 md:size-6" />
+        Contáctame
+      </SocialPill>
+    </nav>
+  </div>
 </div>
+

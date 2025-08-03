@@ -1,53 +1,118 @@
 ---
 import type tailwindcss from "@tailwindcss/vite";
-import NextjsIcon from "@/components/icons/Nextjs.astro";
-import TailwindCSSIcon from "@/components/icons/TailwindCSS.astro"
+import WordPressIcon from "@/components/icons/WordPress.astro";
+import ElementorIcon from "@/components/icons/Elementor.astro";
+import CakePHPIcon from "@/components/icons/CakePHP.astro";
+import BootstrapIcon from "@/components/icons/Bootstrap.astro";
+import JavaScriptIcon from "@/components/icons/JavaScript.astro";
+import MoodleIcon from "@/components/icons/Moodle.astro";
+import Link from "@/components/icons/Link.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import GitHub from "@/components/icons/GitHub.astro";
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextjsIcon
+  WORDPRESS: {
+    name: "WordPress",
+    class: "bg-blue-100 text-[#21759B]",
+    icon: WordPressIcon
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: TailwindCSSIcon
+  ELEMENTOR: {
+    name: "Elementor",
+    class: "bg-pink-200 text-pink-900",
+    icon: ElementorIcon
+  },
+  CAKEPHP: {
+    name: "CakePHP",
+    class: "bg-rose-200 text-rose-700",
+    icon: CakePHPIcon
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-purple-100 text-purple-700",
+    icon: BootstrapIcon
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-100 text-yellow-800",
+    icon: JavaScriptIcon
+  },
+  MOODLE: {
+    name: "Moodle",
+    class: "bg-orange-100 text-orange-700",
+    icon: MoodleIcon
   },
 };
 
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
-    description: "Lorem ipsum",
-    link: "https://svgl.app/",
-    github: "#",
-    image: "/projects/project1.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: "Panda4Events - Web corporativa y sistema de reservas para campus deportivos",
+    description: "Web informativa con sistema de reservas online, creado para potenciar la marca y centralizar la difusión de campus deportivos. Creada desde cero con WordPress y Elementor, con diseño responsive y estructura modular.",
+    link: "https://panda4events.com",
+    image: "/projects/panda4events-project.webp",
+    tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
   },
+  {
+    title: "Cathedra Formación - Web académica informativa",
+    description: "Web destinada a mostrar la oferta formativa y novedades de la academia. Reconstruida desde cero con diseño responsive para modernizar su imagen, facilitar la gestión de contenidos y mejorar la experiencia de usuario. Desarrollada con CakePHP, Bootstrap y JavaScript, con integración básica de Moodle para formación online.",
+    link: "http://cathedraformacion.es/",
+    image: "/projects/cathedraformacion-project.webp",
+    tags: [TAGS.CAKEPHP, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT, TAGS.MOODLE],
+  },
+  {
+    title: "Herramienta web para la divulgación de DAEIRA",
+    description: "Aplicación web desarrollada como TFG para divulgar las investigaciones del grupo DAEIRA de la UVigo, centradas en análisis y reconocimiento de imágenes. Implementada desde cero con CakePHP, Bootstrap y JavaScript, con diseño responsive y estructura orientada a la difusión de contenido científico.",
+    link: "http://lia.ei.uvigo.es/daeira/",
+    image: "/projects/daeira-project.webp",
+    tags: [TAGS.CAKEPHP, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT],
+  },
+
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, tags, image }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-4">
-        {tags.map((tag) => (
-          <li>
-            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                <tag.icon class="size-4"/>
-                {tag.name}
-            </span>
-        </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 md:space-x-8 md:space-y-0 group md:flex-row">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip  rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+           <h3 class="text-2xl font-bold text-gray-700 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-col flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) =>(
+                <li>
+                  <span class={`flex gap-2 rounded-full text-xs py-1 px-2 ${tag.class}`}>
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-300">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-6" />
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+
+      </article>
+    ))
+  }
+</div>
