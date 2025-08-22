@@ -6,7 +6,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://diegopefer.github.io",
   base: "/portfolio/",
+  outDir: "./dist",
   vite: {
     plugins: [tailwindcss()],
   },
+  build: {
+    assets: "assets"
+  },
+  
 });
